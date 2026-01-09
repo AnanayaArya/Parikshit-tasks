@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cosmic Odyssey</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at bottom, #020111, #000);
+  color: white;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.stars {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(1px 1px at 20px 30px, white, transparent);
+  animation: starsMove 120s linear infinite;
+  z-index: -1;
+}
+
+@keyframes starsMove {
+  from { transform: translate(0,0); }
+  to { transform: translate(-50%, -50%); }
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px cyan; }
+  to { text-shadow: 0 0 30px cyan; }
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  animation: fadeText 4s infinite;
+}
+
+@keyframes fadeText {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.solar-system {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 100px auto;
+}
+
+.sun {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #ffeb3b, #ff9800);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: sunPulse 3s infinite alternate;
+}
+
+@keyframes sunPulse {
+  from { box-shadow: 0 0 20px orange; }
+  to { box-shadow: 0 0 50px orange; }
+}
+
+.orbit {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 1px dashed rgba(255,255,255,0.4);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotateOrbit 15s linear infinite;
+}
+
+.earth {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #03a9f4, #01579b);
+  border-radius: 50%;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes rotateOrbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.section {
+  padding: 80px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: rgba(255,255,255,0.06);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.about-space {
+  max-width: 800px;
+  margin: 100px auto;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.about-space h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-space p {
+  opacity: 0.8;
+}
+
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px cyan;
+}
+
+.button-container {
+  text-align: center;
+  margin: 60px 0;
+}
+
+button {
+  padding: 15px 40px;
+  background: transparent;
+  border: 2px solid cyan;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background: rgba(0,255,255,0.2);
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.6;
+  animation: footerFade 3s infinite alternate;
+}
+
+@keyframes footerFade {
+  from { opacity: 0.4; }
+  to { opacity: 0.8; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<section class="hero">
+  <h1>Space Exploration</h1>
+  <p>Exploring the universe through motion</p>
+</section>
+
+<div class="solar-system">
+  <div class="sun"></div>
+  <div class="orbit">
+    <div class="earth"></div>
+  </div>
+</div>
+
+<section class="about-space">
+  <h2>About Space</h2>
+  <p>Space is an enormous and largely unexplored region that begins beyond Earth’s atmosphere.</p>
+  <p>It is home to countless stars, planets, and galaxies, each following precise physical laws.</p>
+  <p>The Sun acts as the gravitational center of our solar system, guiding planetary motion.</p>
+  <p>Planets travel around the Sun in stable orbits shaped by gravity and momentum.</p>
+  <p>Studying space allows scientists to understand the origin, structure, and future of the universe.</p>
+  <p><strong>LET’S EXPLORE SPACE TOGETHER — TO INFINITY AND BEYOND.</strong></p>
+</section>
+
+
+
+
+<section class="section">
+  <div class="card">🚀 Mission Control</div>
+  <div class="card">🛰 Orbital Systems</div>
+  <div class="card">🌌 Deep Space</div>
+</section>
+
+<div class="button-container">
+  <button>Initiate Launch</button>
+</div>
+
+<footer>
+  Inspired by NASA · ISRO · Space UI
+</footer>
+
+</body>
+</html>
